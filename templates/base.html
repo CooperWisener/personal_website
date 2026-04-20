@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Cooper Wisener{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="profile-photo-wrap">
+          <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Cooper Wisener" class="profile-photo" />
+        </div>
+        <h1 class="sidebar-name">Cooper Wisener</h1>
+        <p class="sidebar-title">Data Science Student</p>
+        <p class="sidebar-sub">University of Wisconsin–Madison</p>
+
+        <ul class="sidebar-links">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Madison, WI</span>
+          </li>
+          <li>
+            <a href="https://github.com/CooperWisener" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span>CooperWisener</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/cooper-wisener-b72a8b294" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:cooperwisener30@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              <span>cooperwisener30@gmail.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+
+      <!-- Top Navbar -->
+      <nav class="topnav">
+        <a href="{{ url_for('index') }}" class="{% if active_page == 'home' %}active{% endif %}">Home</a>
+        <a href="{{ url_for('projects') }}" class="{% if active_page == 'projects' %}active{% endif %}">Projects</a>
+        <a href="{{ url_for('resume') }}" class="{% if active_page == 'resume' %}active{% endif %}">Resume &amp; CV</a>
+      </nav>
+
+      <!-- Page Content -->
+      <div class="content">
+        {% block content %}{% endblock %}
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

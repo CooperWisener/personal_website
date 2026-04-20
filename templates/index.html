@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+
+{% block title %}Cooper Wisener{% endblock %}
+
+{% block content %}
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p>
+    Hi, I'm Cooper — a Data Science student at the University of Wisconsin–Madison (graduating May 2027)
+    with a minor in Business and a 3.82 GPA. I'm passionate about applying statistical modeling and
+    machine learning to real-world problems, with a particular interest in sports analytics and
+    natural language processing.
+  </p>
+  <p>
+    I currently work as a Data Science Research Assistant at the
+    <strong>Niedenthal Emotions Lab</strong> at UW–Madison, where I apply NLP techniques to
+    analyze emotion-related datasets and support ongoing psychological research.
+  </p>
+  <p>
+    Outside the lab, I've built projects ranging from NFL analytics models using Markov chains and
+    XGBoost to a full-stack web app powered by the Spotify and ChatGPT APIs. I'm always looking
+    for new problems to tackle with data.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>R</li>
+        <li>Java</li>
+        <li>HTML</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Tools &amp; Frameworks</h3>
+      <ul class="skill-list">
+        <li>Flask</li>
+        <li>pandas</li>
+        <li>XGBoost</li>
+        <li>ranger</li>
+        <li>glmnet</li>
+        <li>ggplot2</li>
+        <li>Stata</li>
+        <li>Apache</li>
+        <li>Git</li>
+        <li>Excel</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Concepts</h3>
+      <ul class="skill-list">
+        <li>Natural Language Processing</li>
+        <li>Machine Learning</li>
+        <li>Statistical Modeling</li>
+        <li>Data Visualization</li>
+        <li>Sports Analytics</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p>
+    I'm always open to research collaborations, internship opportunities, or just talking data.
+    The best way to reach me is by email.
+  </p>
+  <ul class="contact-list">
+    <li><strong>Email:</strong> <a href="mailto:cooperwisener30@gmail.com">cooperwisener30@gmail.com</a></li>
+    <li><strong>GitHub:</strong> <a href="https://github.com/CooperWisener" target="_blank" rel="noopener">github.com/CooperWisener</a></li>
+    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/cooper-wisener-b72a8b294" target="_blank" rel="noopener">linkedin.com/in/cooper-wisener-b72a8b294</a></li>
+  </ul>
+</section>
+{% endblock %}

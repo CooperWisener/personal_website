@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% set active_page = "projects" %}
+
+{% block title %}Projects — Cooper Wisener{% endblock %}
+
+{% block content %}
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-intro">
+    Most of my projects live at the intersection of sports analytics and machine learning.
+    Source code for each is available on GitHub.
+  </p>
+
+  <div class="project-list">
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Attack or Contain</h3>
+        <a href="https://github.com/CooperWisener" target="_blank" rel="noopener" class="github-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+      <p class="project-date">Oct 2025 – Dec 2025</p>
+      <p class="project-desc">
+        An NFL defensive analytics project using <strong>change point detection</strong> to identify
+        how defensive players react to pass plays in zone coverage. Built a multiclass classification
+        model with <strong>XGBoost</strong> to determine whether a defender should attack the ball
+        carrier or play to contain the receiver.
+      </p>
+      <div class="tech-stack">
+        <span class="tag">Python</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">Change Point Detection</span>
+        <span class="tag">NFL Analytics</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Pass Catcher CPOE</h3>
+        <a href="https://github.com/CooperWisener" target="_blank" rel="noopener" class="github-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+      <p class="project-date">Sept 2025 – Oct 2025</p>
+      <p class="project-desc">
+        Modeled expected completion percentage (xCP) for NFL pass catchers using
+        <strong>Random Forests</strong> via R's <code>ranger</code> package. Applied xCP to rank
+        receivers by <strong>Completion Percentage Over Expected (CPOE)</strong>, surfacing which
+        receivers outperform or underperform their expected production.
+      </p>
+      <div class="tech-stack">
+        <span class="tag">R</span>
+        <span class="tag">ranger</span>
+        <span class="tag">Random Forests</span>
+        <span class="tag">NFL Analytics</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>4th Down Simulation using Markov Chains</h3>
+        <a href="https://github.com/CooperWisener" target="_blank" rel="noopener" class="github-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+      <p class="project-date">Oct 2025 – Nov 2025</p>
+      <p class="project-desc">
+        Built a <strong>Markov Chain</strong> to model state transitions in NFL drives, then used it
+        to simulate 4th down decision outcomes. Compared Green Bay Packers head coach
+        <strong>Matt LaFleur's</strong> 4th down tendencies against league averages to evaluate
+        decision-making efficiency.
+      </p>
+      <div class="tech-stack">
+        <span class="tag">R</span>
+        <span class="tag">Markov Chains</span>
+        <span class="tag">Simulation</span>
+        <span class="tag">NFL Analytics</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>DelphiAI</h3>
+        <a href="https://github.com/CooperWisener" target="_blank" rel="noopener" class="github-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+      <p class="project-date">May 2024 – Sept 2024</p>
+      <p class="project-desc">
+        A full-stack web application built with <strong>Flask</strong> that connects to a user's
+        Spotify account to display recently played songs, top artists, and top tracks. Integrated
+        the <strong>ChatGPT API</strong> to generate personalized music recommendations based on
+        listening history or a user's search query.
+      </p>
+      <div class="tech-stack">
+        <span class="tag">Python</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Spotify API</span>
+        <span class="tag">ChatGPT API</span>
+        <span class="tag">HTML</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

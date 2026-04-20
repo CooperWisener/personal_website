@@ -1,0 +1,434 @@
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Georgia', serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.7;
+}
+
+a { color: #555; text-decoration: none; }
+a:hover { color: #000; text-decoration: underline; }
+
+/* ── Layout ───────────────────────────────────────── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ──────────────────────────────────────── */
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: #f7f7f7;
+  border-right: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-inner {
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-photo-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #ddd;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo-wrap::after {
+  /* Shown when image fails to load */
+  content: '';
+}
+
+.sidebar-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 0.2rem;
+  font-family: 'Georgia', serif;
+}
+
+.sidebar-title {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.1rem;
+}
+
+.sidebar-sub {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  width: 100%;
+  text-align: left;
+  font-size: 0.82rem;
+  color: #444;
+}
+
+.sidebar-links li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  word-break: break-word;
+}
+
+.sidebar-links li i {
+  margin-top: 0.2rem;
+  min-width: 14px;
+  color: #666;
+}
+
+.sidebar-links a {
+  color: #444;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.sidebar-links a:hover { color: #000; text-decoration: underline; }
+
+/* ── Main Area ────────────────────────────────────── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ── Top Navbar ───────────────────────────────────── */
+.topnav {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 2.5rem;
+  display: flex;
+  gap: 2rem;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topnav a {
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  color: #555;
+  letter-spacing: 0.02em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.topnav a:hover {
+  color: #111;
+  text-decoration: none;
+  border-bottom-color: #aaa;
+}
+
+.topnav a.active {
+  color: #111;
+  font-weight: bold;
+  border-bottom-color: #333;
+}
+
+/* ── Content ──────────────────────────────────────── */
+.content {
+  padding: 2.5rem 3rem;
+  max-width: 820px;
+}
+
+/* ── Section Titles ───────────────────────────────── */
+.section-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Georgia', serif;
+}
+
+section { margin-bottom: 3rem; }
+
+.section-intro {
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* ── About / Home ─────────────────────────────────── */
+#about p, #contact p {
+  margin-bottom: 0.9rem;
+  color: #333;
+}
+
+/* ── Skills ───────────────────────────────────────── */
+.skills-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skill-group h3 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.skill-list {
+  list-style: none;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.skill-list li {
+  padding: 0.2rem 0;
+  padding-left: 0.75rem;
+  position: relative;
+}
+
+.skill-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #999;
+}
+
+/* ── Contact ──────────────────────────────────────── */
+.contact-list {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.contact-list li { margin-bottom: 0.4rem; }
+
+/* ── Projects ─────────────────────────────────────── */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.project-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  background: #fafafa;
+  transition: box-shadow 0.15s;
+}
+
+.project-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.project-header h3 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #111;
+  font-family: 'Georgia', serif;
+}
+
+.github-link {
+  font-size: 0.82rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github-link:hover { color: #000; text-decoration: none; }
+
+.project-date {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.9rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #ececec;
+  color: #444;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+/* ── Resume / Documents ───────────────────────────── */
+.doc-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.doc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  background: #fafafa;
+  transition: box-shadow 0.15s;
+}
+
+.doc-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+
+.doc-icon {
+  font-size: 1.8rem;
+  color: #888;
+  min-width: 2rem;
+  padding-top: 0.1rem;
+}
+
+.doc-info h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  font-family: 'Georgia', serif;
+  color: #111;
+}
+
+.doc-info p {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  background: #333;
+  color: #fff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+  font-family: 'Georgia', serif;
+}
+
+.btn-download:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Education ────────────────────────────────────── */
+.edu-entry {
+  margin-bottom: 1.5rem;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.edu-header h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+  font-family: 'Georgia', serif;
+}
+
+.edu-date {
+  font-size: 0.82rem;
+  color: #888;
+  font-style: italic;
+}
+
+.edu-degree {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+.edu-details {
+  list-style: disc;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.edu-details li { margin-bottom: 0.25rem; }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 700px) {
+  .layout { flex-direction: column; }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .sidebar-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .profile-photo-wrap { width: 80px; height: 80px; margin-bottom: 0; }
+
+  .content { padding: 1.5rem 1.25rem; }
+
+  .topnav { padding: 0.6rem 1.25rem; gap: 1.25rem; }
+
+  .skills-grid { flex-direction: column; gap: 1rem; }
+
+  .edu-header { flex-direction: column; }
+
+  .doc-card { flex-direction: column; }
+}
