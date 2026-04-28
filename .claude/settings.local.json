@@ -3,7 +3,10 @@
     "allow": [
       "Bash(python -c ' *)",
       "Bash(pip install *)",
-      "Bash(python -c \"from flask import Flask; print\\('Flask OK'\\)\")"
+      "Bash(python -c \"from flask import Flask; print\\('Flask OK'\\)\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(xargs grep *)"
     ]
   }
 }
