@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.conda/
+
+# Environment / local data
+.env
+.env.*
+instance/
+*.db
+*.sqlite3
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / test cache
+*.log
+.pytest_cache/
+
+# Private documents
+documents/Personal Website Wishlist.pdf
